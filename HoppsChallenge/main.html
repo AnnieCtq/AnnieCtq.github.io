@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hopp's Healthy Challenges</title>
+    
+	<style>
+	@font-face {
+    font-family: 'Pixellari';
+    src: url('fonts/Pixellari.ttf') format('truetype'),
+	}
+	
+	body{
+		font-family: 'Pixellari', sans-serif;
+		background-image:url('img/bg.png');
+		}
+		
+	.overlay {
+		width: 300px; 
+		height: 300px;
+		background: rgba(0, 0, 0, 0.7); 
+		position: absolute; /* Change from fixed to absolute */
+		left: 50%;
+		transform: translateX(-50%); /* Center horizontally */
+		top: 21%; /* Adjust based on title position */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+		
+	.overlay p {
+		font-size: 24px;
+		font-weight: bold;
+		color: white;
+		margin: 0;
+	}
+	
+	#output{
+		font-size: 24px;
+		font-weight: bold;
+		color: white;
+		margin: 0;
+	}
+
+	.button{
+		width:100px;
+		background-color:#F57E20;
+		font-size: 20px;
+		font-weight: bold;
+		color: black;
+		translate:translateZ (-80%);
+		text-align:center;
+		transform: translateX(122%); /* Center horizontally */
+	}	
+	
+	</style>
+	
+</head>
+<body>
+	<img src = "img/titlemini.png" alts="masthead" style="max-width:100%;height:auto; margin-left:85px;" class="logo"/>
+    <img src="img/titlebig.png" style="margin-left:7px; transform: translateZ(-240px);"/>
+	
+	<div class="overlay" id="output">
+	
+		<p>Click the button to get a challenge!</p>
+		
+	</div> 
+	</div>
+	
+	<img src= "img/butt.png" onclick="getRandomChallenge()" style="margin-left:40px; margin-top:320px;"/>
+	
+	<a href="MainPage.html">
+		<div class="button"> 
+			Back 
+		</div>
+	</a>
+	
+	<script>
+       const challenges = [
+			"Drink at least 8 glasses of water today.",
+			"Eat one extra serving of vegetables with your meals.",
+			"Swap white rice/bread for whole grains (brown rice, whole wheat).",
+			"Include a source of protein in every meal (eggs, beans, fish, tofu).",
+			"Try one new fruit or vegetable you’ve never eaten before!",
+			"Avoid processed snacks and choose natural options (nuts, yogurt, fruit).",
+			"Eat until you're satisfied, not stuffed – listen to your body.",
+			"Follow the Healthy Plate Concept (½ veggies, ¼ protein, ¼ carbs).",
+			"Prepare a homemade meal instead of eating out.",
+			"Replace sugary drinks with infused water or unsweetened tea.",
+			"Have a colorful meal – more colors = more nutrients!",
+			"Bring some fruits or vegetables while eating out!",
+			"Eat at least 3 servings of vegetables today.",
+			"Reduce salt intake – use herbs and spices for flavor instead.",
+			"Swap deep-fried foods for grilled, steamed, or baked.",
+			"Control portion sizes by using a smaller plate.",
+			"Choose lean protein over fatty cuts (chicken breast, fish, tofu).",
+			"Eat slowly and mindfully – enjoy each bite.",
+			"Try a healthy homemade snack instead of store-bought.",
+			"Reduce artificial sweeteners and opt for natural sweetness (honey, fruits).",
+			"Plan and prep at least 2 meals in advance.",
+			"Eat healthy fats (avocados, nuts, seeds) instead of unhealthy ones.",
+			"Drink a glass of water before each meal to prevent overeating.",
+			"Reduce fast food intake by bringing your own meal.",
+			"Make half of your grains whole grains today.",
+			"Avoid late-night snacking – stop eating 2 hours before bed.",
+			"Cook a balanced breakfast with protein, fiber, and healthy fats.",
+			"Try a new healthy recipe and share it with someone.",
+			"Limit added sugar – check nutrition labels before eating.",
+			"Eat at least 5 different plant-based foods today.",
+			"Reflect on what you've learned & choose one new habit to keep forever!"
+		];
+
+		let availableChallenges = [...challenges];
+		let animation; // Store interval ID
+
+		function getRandomChallenge() {
+			if (availableChallenges.length === 0) {
+				availableChallenges = [...challenges]; // Reset the pool when all challenges are used
+			}
+
+			let finalIndex = Math.floor(Math.random() * availableChallenges.length);
+			let finalChallenge = availableChallenges.splice(finalIndex, 1)[0];
+
+			let output = document.getElementById("output");
+			let iterations = 30; // Number of times to change text before stopping
+			let intervalTime = 100; // Speed of text change (milliseconds)
+			let counter = 0;
+
+			animation = setInterval(() => {
+				let randomIndex = Math.floor(Math.random() * challenges.length);
+				output.innerText = challenges[randomIndex]; // Show random challenge
+
+				counter++;
+				if (counter >= iterations) {
+					stopAnimation(); // Stop animation when done
+					setTimeout(() => {
+						output.innerText = finalChallenge; // Show final challenge
+					}, 500);
+				}
+			}, intervalTime);
+		}
+
+		function stopAnimation() {
+			clearInterval(animation); // Stop the rolling effect
+		}
+
+    </script>
+</body>
+</html>
