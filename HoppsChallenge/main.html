@@ -12,7 +12,6 @@
 	    src: url('fonts/Pixellari.ttf') format('truetype');
 	}
 	
-	/* Keep background fixed and full screen */
 	body {
 	    font-family: 'Pixellari', sans-serif;
 	    background-image: url('img/bg.png');
@@ -24,10 +23,9 @@
 	    overflow: hidden; 
 	    position: fixed; 
 	}
-	
-	/* Main container for elements */
+
 	.container {
-	    position: absolute; /* Keeps it separate from background */
+	    position: absolute;
 	    top: 50%;
 	    left: 50%;
 	    transform: translate(-50%, -50%);
@@ -44,7 +42,7 @@
 	/* Challenge Box (Fixed in place) */
 	.overlay { 
 		width: 50vw; 
-		height: 30vh; 
+		height: 20vh; 
 		background: rgba(0, 0, 0, 0.7); 
 		position: absolute; 
 		left: 50%; 
@@ -56,7 +54,8 @@
 		align-items: center; 
 		text-align: center; 
 		margin:10px; 
-		padding: 10px; 
+		padding: 1vh 1vh 1vh 1vh; 
+		
 	}
 	
 	.overlay p, #output {
