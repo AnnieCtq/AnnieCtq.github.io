@@ -41,19 +41,15 @@
 		
 		/* Challenge Box */
 		.overlay {
-		    width: 300px; 
-		    height: 200px; /* Fixed height */
-		    background: rgba(0, 0, 0, 0.7); 
-		    padding: 10px;
-		    position: absolute; 
-		    left: 50%;
-		    transform: translateX(-50%);
-		    top: 25%; /* Adjust based on title position */
+		    width: 100%;
+		    max-width: 320px;
+		    background: rgba(0, 0, 0, 0.7);
+		    padding: 20px;
+		    border-radius: 10px;
+		    text-align: center;
 		    display: flex;
 		    justify-content: center;
 		    align-items: center;
-		    text-align: center;
-		    margin: 10px;
 		}
 		
 		/* Challenge Text */
@@ -80,10 +76,8 @@
 		    align-items: center;
 		}
 		
-		/* Move Titles (.small and .big) Up */
+		/* Images */
 		.small, .big {
-		    position: relative;
-		    top: -40px; /* Moves titles up */
 		    max-width: 100%;
 		    height: auto;
 		    display: flex;
@@ -108,8 +102,7 @@
 		    }
 		
 		    .overlay p, #output {
-		       
-		font-size: 18px;
+		        font-size: 18px;
 		    }
 		
 		    .button {
@@ -117,6 +110,8 @@
 		        font-size: 16px;
 		        padding: 8px;
 		    }
+		}
+
 	</style>
 	
 </head>
