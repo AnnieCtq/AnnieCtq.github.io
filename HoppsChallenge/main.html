@@ -21,8 +21,8 @@
 	    padding: 0;
 	    height: 100vh;
 	    width: 100vw;
-	    overflow: hidden; /* Prevent scrolling */
-	    position: fixed; /* Background stays still */
+	    overflow: hidden; 
+	    position: fixed; 
 	}
 	
 	/* Main container for elements */
@@ -37,26 +37,27 @@
 	    justify-content: center;
 	    width: 90%;
 	    max-width: 350px;
+		height: auto;
 	}
 	
 	/* Challenge Box (Fixed in place) */
 	.overlay { 
-		width: 300px; 
-		height: auto; 
+		width: 50vw; 
+		height: 30vh; 
 		background: rgba(0, 0, 0, 0.7); 
 		position: absolute; 
 		left: 50%; 
-		transform: translateX(-50%); /* Center horizontally */ 
-		top: 40%; /* Adjust based on title position */ 
+		transform: translateX(-50%); 
+		transform: translateZ(-50%);
+		top: -90%; /* Adjust based on title position */ 
 		display: flex; 
 		justify-content: center; 
 		align-items: center; 
 		text-align: center; 
 		margin:10px; 
-		padding: 20px; 
+		padding: 10px; 
 	}
 	
-	/* Challenge Text */
 	.overlay p, #output {
 	    font-size: 20px;
 	    font-weight: bold;
@@ -65,7 +66,6 @@
 	    text-align: center;
 	}
 	
-	/* Buttons */
 	.button {
 	    width: 120px;
 	    background-color: #F57E20;
@@ -74,27 +74,24 @@
 	    color: black;
 	    text-align: center;
 	    padding: 10px;
-	    border-radius: 5px;
-	    cursor: pointer;
-	    margin-top: 20px;
+	    margin-top: 5vh;
+		margin-left: 37vw;
 	}
 	
-	/* Title Images (Move Up Without Affecting Background) */
 	.small, .big {
 	    max-width: 100%;
 	    height: auto;
 	    display: flex;
 	    justify-content: center;
 	    position: relative;
-	    top: -40px; /* Moves up */
+	    top: -38vh;
 	}
 	
-	/* Challenge Section */
 	.challenge {
-	    margin-top: 30px;
 	    text-align: center;
+		margin-top: 550px;	
 	}
-	
+
 	/* Responsive Design for Phones */
 	@media screen and (max-width: 600px) {
 	    .overlay {
