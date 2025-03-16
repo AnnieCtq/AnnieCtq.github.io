@@ -11,36 +11,41 @@
 	    font-family: 'Pixellari';
 	    src: url('fonts/Pixellari.ttf') format('truetype');
 	}
-	/* Fix background position and prevent movement */
+	
+	/* Keep background fixed and full screen */
 	body {
 	    font-family: 'Pixellari', sans-serif;
 	    background-image: url('img/bg.png');
+	    background-size: cover;
+	    background-position: center;
+	    background-repeat: no-repeat;
 	    margin: 0;
 	    padding: 0;
 	    height: 100vh;
 	    width: 100vw;
-	    overflow: hidden;
-	    display: flex;
-	    align-items: center;
-	    justify-content: center;
+	    overflow: hidden; /* Prevent scrolling */
+	    position: fixed; /* Background stays still */
 	}
 	
-	/* Main container to center everything */
+	/* Main container for elements */
 	.container {
+	    position: absolute; /* Keeps it separate from background */
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
 	    display: flex;
 	    flex-direction: column;
 	    align-items: center;
 	    justify-content: center;
-	    text-align: center;
 	    width: 90%;
 	    max-width: 350px;
 	}
 	
-	/* Challenge Box - Stays in Center */
+	/* Challenge Box (Fixed in place) */
 	.overlay {
 	    width: 90%;
 	    max-width: 300px;
-	    height: 200px; /* Fixed height */
+	    height: 200px; /* Set fixed height */
 	    background: rgba(0, 0, 0, 0.7);
 	    padding: 10px;
 	    display: flex;
@@ -48,9 +53,11 @@
 	    align-items: center;
 	    text-align: center;
 	    border-radius: 10px;
+	    position: relative; /* Stays in place */
 	}
 	
-	.overlay p {
+	/* Challenge Text */
+	.overlay p, #output {
 	    font-size: 20px;
 	    font-weight: bold;
 	    color: white;
@@ -58,14 +65,7 @@
 	    text-align: center;
 	}
 	
-	#output {
-	    font-size: 20px;
-	    font-weight: bold;
-	    color: white;
-	    margin: 0;
-	    text-align: center;
-	}
-	
+	/* Buttons */
 	.button {
 	    width: 120px;
 	    background-color: #F57E20;
@@ -79,14 +79,17 @@
 	    margin-top: 20px;
 	}
 	
+	/* Title Images (Move Up Without Affecting Background) */
 	.small, .big {
 	    max-width: 100%;
 	    height: auto;
 	    display: flex;
 	    justify-content: center;
-	    margin-top: 10px;
+	    position: relative;
+	    top: -40px; /* Moves up */
 	}
 	
+	/* Challenge Section */
 	.challenge {
 	    margin-top: 30px;
 	    text-align: center;
@@ -97,7 +100,6 @@
 	    .overlay {
 	        width: 95%;
 	        max-width: 280px;
-	        top: 10%;
 	        padding: 8px;
 	    }
 	
