@@ -91,11 +91,21 @@
 	}
 	
 	.challenge {
-	    justified-content: center;
-	    text-align: center;
-	    margin-top: 480px;
 	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    position: fixed;
+	    bottom: 20vh;  /* Adjust gap above the "Back" button */
+	    left: 50%;
+	    transform: translateX(-50%);
+	    z-index: 10;
 	}
+	.challenge img {
+	    max-width: 100%;
+	    width: 150px;  /* Adjust size */
+	    cursor: pointer;
+	}
+
 		
 	/* Responsive Design for Phones */
 	@media screen and (max-width: 600px) {
