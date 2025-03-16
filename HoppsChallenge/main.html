@@ -43,13 +43,13 @@
 	/* Challenge Box (Fixed in place) */
 	.overlay { 
 		width: 50vw; 
-		height: 26vh; 
+		height: 30vh; 
 		background: rgba(0, 0, 0, 0.7); 
 		position: absolute; 
 		left: 50%; 
 		transform: translateX(-50%); 
 		transform: translateZ(-50%);
-		top: -100%; /* Adjust based on title position */ 
+		top: -40%; /* Adjust based on title position */ 
 		display: flex; 
 		justify-content: center; 
 		align-items: center; 
@@ -72,10 +72,12 @@
 	    font-size: 18px;
 	    font-weight: bold;
 	    color: black;
+		justify-content: center; 
+		align-items: center; 
 	    text-align: center;
 	    padding: 10px;
 	    margin-top: 5vh;
-		margin-left: 37vw;
+		margin-left: 32vw;
 	}
 	
 	.small, .big {
@@ -89,9 +91,9 @@
 	
 	.challenge {
 	    text-align: center;
-		margin-top: 550px;	
+		margin-top: 480px;	
 	}
-
+		
 	/* Responsive Design for Phones */
 	@media screen and (max-width: 600px) {
 	    .overlay {
