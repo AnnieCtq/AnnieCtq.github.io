@@ -11,7 +11,7 @@
 	    font-family: 'Pixellari';
 	    src: url('fonts/Pixellari.ttf') format('truetype');
 	}
-	
+	/* Fix background position and prevent movement */
 	body {
 	    font-family: 'Pixellari', sans-serif;
 	    background-image: url('img/bg.png');
@@ -20,20 +20,32 @@
 	    background-repeat: no-repeat;
 	    margin: 0;
 	    padding: 0;
+	    height: 100vh;
+	    width: 100vw;
+	    overflow: hidden; /* Prevent scrolling */
 	    display: flex;
-	    flex-direction: column;
 	    align-items: center;
 	    justify-content: center;
 	}
 	
+	/* Main container to center everything */
+	.container {
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    justify-content: center;
+	    text-align: center;
+	    width: 90%;
+	    max-width: 350px;
+	}
+	
+	/* Challenge Box - Stays in Center */
 	.overlay {
 	    width: 90%;
 	    max-width: 300px;
-	    height: auto;
+	    height: 200px; /* Fixed height */
 	    background: rgba(0, 0, 0, 0.7);
 	    padding: 10px;
-	    position: relative;
-	    top: 15%;
 	    display: flex;
 	    justify-content: center;
 	    align-items: center;
